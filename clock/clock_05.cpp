@@ -11,10 +11,13 @@
 int main()
 {
 	using namespace std::chrono;
+	
 	using Day = duration<int, std::ratio<60 * 60 * 24>>;
-	Day one_day{ 1 };
+	//chrono::days since C++20
 
-	//system_clock::time_point tp_today = system_clock::now();
+	Day one_day{ 1 };
+	//days one_day{ 1 }; //C++20
+
 	auto tp_today = system_clock::now();
 	auto tp_tomorrow = tp_today + one_day;
 
