@@ -1,17 +1,16 @@
 #include <chrono>
 #include <iostream>
 
-using namespace std;
-using namespace chrono;
-
-using dsec = duration<double>;
-
 int main()
 {
-	microseconds us{ 7654777 };
-	nanoseconds nx = us;  //daha kaba (coarse) türden daha ince türe örtülü dönüşüm
+	using namespace std;
+	using namespace chrono;
 
-	//milliseconds msx = us;  //gecersiz daha kaba türe otomatik dönüşüm yok
+	using dsec = duration<double>;
+	microseconds us{ 7654777 };
+	nanoseconds nx = us;  // conversion from a coarser type to a finer type
+
+	//milliseconds msx = us;  // invalid - there is no conversion from finer types to coarser types
 	milliseconds msx = duration_cast<milliseconds>(us);
 	cout << msx.count() << '\n';
 	msx = ceil<milliseconds>(us);
