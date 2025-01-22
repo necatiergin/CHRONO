@@ -1,16 +1,14 @@
 #include <iostream>
 #include <chrono>
 
-using namespace std;
-using namespace chrono;
-
 int main()
 {
-	using dsec = duration<double>;
+	using namespace std::literals;
+	using dsec = std::chrono::duration<double>;
 
-	cout << boolalpha;
-	cout << (543ms == 543000us) << '\n';
-	cout << (543ms < 543001us) << '\n';
-	cout << (1s > dsec{ 0.999 }) << '\n';
-	cout << (dsec{ 0.5 } < 543ms) << '\n';
+	boolalpha(std::cout);
+	std::cout << (543ms == 543000us) << '\n';
+	std::cout << (543ms < 543001us) << '\n';
+	std::cout << (1s > dsec{ 0.999 }) << '\n';
+	std::cout << (dsec{ 0.5 } < 543ms) << '\n';
 }
