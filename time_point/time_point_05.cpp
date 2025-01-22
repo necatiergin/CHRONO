@@ -1,11 +1,11 @@
 #include <iostream>
 #include <chrono>
 
-using namespace std;
-using namespace chrono;
-
 int main()
 {
+	using namespace std;
+	using namespace chrono;
+	
 	auto tp = system_clock::now();
 
 	cout << tp.time_since_epoch().count() << '\n';
