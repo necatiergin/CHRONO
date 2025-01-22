@@ -1,7 +1,6 @@
 #include <iostream>
 #include <chrono>
 
-
 int main()
 {
 	using namespace std;
@@ -9,7 +8,7 @@ int main()
 
 	long long msec;
 
-	cout << "mili saniye olarak sureyi girin: ";
+	cout << "enter the duration as milliseconds: ";
 	cin >> msec;
 	milliseconds ms{ msec };
 	hours hrs{ duration_cast<hours>(ms) };
