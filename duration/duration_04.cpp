@@ -1,11 +1,12 @@
 #include <iostream>
 #include <chrono>
 
-using namespace std;
-using namespace chrono;
 
 int main()
 {
+	using namespace std;
+	using namespace chrono;
+
 	long long msec;
 
 	cout << "mili saniye olarak sureyi girin: ";
@@ -17,14 +18,14 @@ int main()
 	milliseconds msx(ms % 1s);
 
 	if (hrs.count())
-		cout << hrs.count() << " saat ";
+		cout << hrs.count() << " hours ";
 
 	if (mins.count())
-		cout << mins.count() << " dakika ";
+		cout << mins.count() << " minutes ";
 
 	if (sec.count())
-		cout << sec.count() << " saniye ";
+		cout << sec.count() << " seconds ";
 
 	if (msx.count())
-		cout << msx.count() << " milisaniye\n";
+		cout << msx.count() << " milliseconds\n";
 }
