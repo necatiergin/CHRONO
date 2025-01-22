@@ -1,30 +1,27 @@
 #include <chrono>
 #include <iostream>
 
-
 template<typename R, typename P>
 std::ostream& operator<<(std::ostream& os, const std::chrono::duration<R, P>& dur)
 {
 	return os << dur.count() << " * (" << P::num << " / " << P::den << ")";
 }
 
-using namespace std;
-using namespace chrono;
-
-using halfsec = std::chrono::duration<long long, std::ratio<1, 2>>;
-using tensec = std::chrono::duration<long long, std::deca>;
-using frame = std::chrono::duration<double, std::ratio<1, 10>>;
-using Day = std::chrono::duration<int, std::ratio<60 * 60 * 24>>;
-
 int main()
 {
-	cout << 45s << '\n';
-	cout << 12ms << '\n';
-	cout << 45us << '\n';
-	cout << 45ns << '\n';
+	using namespace std::chrono;
+	using halfsec = duration<long long, std::ratio<1, 2>>;
+	using tensec = duration<long long, std::deca>;
+	using frame = duration<double, std::ratio<1, 10>>;
+	using Day = duration<int, std::ratio<60 * 60 * 24>>;
 
-	cout << halfsec{ 128 } << '\n';
-	cout << tensec{ 5 } << '\n';
-	cout << frame{ 3.61 } << '\n';
-	cout << Day{ 5 } << '\n';
+	std::cout << 45s << '\n';
+	std::cout << 12ms << '\n';
+	std::cout << 45us << '\n';
+	std::cout << 45ns << '\n';
+
+	std::cout << halfsec{ 128 } << '\n';
+	std::cout << tensec{ 5 } << '\n';
+	std::cout << frame{ 3.61 } << '\n';
+	std::cout << Day{ 5 } << '\n';
 }
