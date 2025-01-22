@@ -19,5 +19,5 @@ int main()
 	auto val = fib(n);
 	auto end = steady_clock::now();
 	cout << "fib(" << n << ") = " << val << "\n";
-	cout << "sure : " << duration<double>{end - start}.count() << " saniye\n";
+	cout << "sure : " << duration<double>{end - start}.count() << " seconds\n";
 }
