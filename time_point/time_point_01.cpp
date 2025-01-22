@@ -4,11 +4,10 @@
 #include <algorithm>
 #include <iostream>
 
-using namespace std;
-using namespace chrono;
-
 int main()
 {
+	using namespace std;
+	using namespace chrono;
 	constexpr size_t size{ 1'000'000 };
 	vector<int> ivec(size);
 
