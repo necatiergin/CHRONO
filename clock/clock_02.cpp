@@ -4,9 +4,10 @@
 
 int main()
 {
+	using std::cout;
 	using namespace std::chrono;
 
-	std::cout << typeid(system_clock::period).name() << '\n';
-	std::cout << typeid(high_resolution_clock::period).name() << '\n';
-	std::cout << typeid(steady_clock::period).name() << '\n';
+	cout << typeid(system_clock::period).name() << '\n';
+	cout << typeid(high_resolution_clock::period).name() << '\n';
+	cout << typeid(steady_clock::period).name() << '\n';
 }
