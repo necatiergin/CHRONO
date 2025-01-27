@@ -1,32 +1,31 @@
 #include <iostream>
 #include <chrono>
 
-using namespace std;
-using namespace chrono;
-
-
 template <typename Clock>
 void displayClockData()
 {
 	//std::cout << typeid(typename Clock::duration).name() << "\n";
-	using Period = typename Clock::period;  //saatimizin periodu
-	if (ratio_less_equal_v<Period, milli>) { //period 1/1000 den yani milisaniyeden küçük ise
-		using TT = typename ratio_multiply<Period, kilo>::type;
-		cout << fixed;
-		cout << static_cast<double>(TT::num) / TT::den << " mili saniye\n";
+	using Period = typename Clock::period;  //period of the clock
+	if (std::ratio_less_equal_v<Period, std::milli>) { //if period is less than 1/1000 
+		using TT = typename std::ratio_multiply<Period, std::kilo>::type;
+		std::cout << std::fixed;
+		std::cout << static_cast<double>(TT::num) / TT::den << " milliseconds\n";
 	}
 	else {
-		cout << static_cast<double>(Period::num) / Period::den << " saniye\n";
+		std::cout << static_cast<double>(Period::num) / Period::den << " seconds\n";
 	}
 
 	if (Clock::is_steady)
-		std::cout << "ayarlanmayan saat\n";
+		std::cout << "monotonic clock\n";
 	else
-		cout << "ayarlanabilir saat\n";
+		std::cout << "adjustable clock\n";
 }
 
 int main()
 {
+	using std::cout;
+	using namespace std::chrono;
+
 	cout << "system_clock\n";
 	displayClockData<system_clock>();
 	std::cout << "\n\n";
