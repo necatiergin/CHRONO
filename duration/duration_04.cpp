@@ -3,8 +3,8 @@
 
 int main()
 {
-	using namespace std;
-	using namespace chrono;
+	using std::cout, std::cin;
+	using namespace std::chrono;
 
 	long long msec;
 
