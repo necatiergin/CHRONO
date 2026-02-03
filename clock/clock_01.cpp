@@ -4,7 +4,7 @@
 template <typename Clock>
 void displayClockData()
 {
-	//std::cout << typeid(typename Clock::duration).name() << "\n";
+	//std::cout << typeid(typename Clock::duration).name() << '\n';
 	using Period = typename Clock::period;  //period of the clock
 	if (std::ratio_less_equal_v<Period, std::milli>) { //if period is less than 1/1000 
 		using TT = typename std::ratio_multiply<Period, std::kilo>::type;
@@ -23,17 +23,14 @@ void displayClockData()
 
 int main()
 {
-	using std::cout;
-	using namespace std::chrono;
-
-	cout << "system_clock\n";
-	displayClockData<system_clock>();
+	std::cout << "system_clock\n";
+	displayClockData<std::chrono::system_clock>();
 	std::cout << "\n\n";
 
-	cout << "high resolution clock \n";
-	displayClockData<high_resolution_clock>();
+	std::cout << "high resolution clock \n";
+	displayClockData<std::chrono::high_resolution_clock>();
 	std::cout << "\n\n";
 
-	cout << "steady clock \n";
-	displayClockData<steady_clock>();
+	std::cout << "steady clock \n";
+	displayClockData<std::chrono::steady_clock>();
 }
