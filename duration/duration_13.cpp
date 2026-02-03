@@ -10,7 +10,5 @@ constexpr dsec operator""_dsec(long double sec)
 
 int main()
 {
-	using namespace std;
-
-	cout << 34.645_dsec;
+	std::cout << 34.645_dsec;
 }
