@@ -6,13 +6,13 @@
 
 int main()
 {
-	using namespace std;
-	using namespace chrono;
+	using namespace std::chrono;
+	
 	constexpr size_t size{ 1'000'000 };
-	vector<int> ivec(size);
+	std::vector<int> ivec(size);
 
-	mt19937 eng;
-	uniform_int_distribution dist{ 0, 1'000'000 };
+	std::mt19937 eng;
+	std::uniform_int_distribution dist{ 0, 1'000'000 };
 
 	const auto tp_start = steady_clock::now();
 
@@ -20,8 +20,8 @@ int main()
 	sort(ivec.begin(), ivec.end());
 
 	const auto tp_end = steady_clock::now();
-	cout << "islem sona erdi\n";
+	std::cout << "islem sona erdi\n";
 
-	cout << "sure : " << duration_cast<milliseconds>(tp_end - tp_start).count() << " milliseconds\n";
-	cout << "sure : " << duration<double>(tp_end - tp_start).count() << " seconds\n";
+	std::cout << "sure : " << duration_cast<milliseconds>(tp_end - tp_start).count() << " milliseconds\n";
+	std::cout << "sure : " << duration<double>(tp_end - tp_start).count() << " seconds\n";
 }
