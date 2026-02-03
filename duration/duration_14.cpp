@@ -3,7 +3,6 @@
 
 int main()
 {
-	using namespace std;
 	using namespace std::chrono;
 
 	seconds sec_45{ 45 };
@@ -12,15 +11,15 @@ int main()
 
 	msec += sec_45 + myday;
 
-	cout << msec.count() << '\n';
-	cout << msec << '\n'; //C++20
+	std::cout << msec.count() << '\n';
+	std::cout << msec << '\n'; //C++20
 
 	--msec;
 	msec *= 10;
-	cout << msec.count() << " ms" << '\n';
-	cout << msec << '\n'; //C++20
+	std::cout << msec.count() << " ms" << '\n';
+	std::cout << msec << '\n'; //C++20
 
-	cout << nanoseconds(msec).count() << " ns" << '\n';
-	cout << nanoseconds(msec) << '\n';
+	std::cout << nanoseconds(msec).count() << " ns" << '\n';
+	std::cout << nanoseconds(msec) << '\n';
 
 }
