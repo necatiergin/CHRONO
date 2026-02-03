@@ -4,13 +4,12 @@
 
 int main()
 {
-	using namespace std;
-	using namespace chrono;
-	
+	using namespace std::chrono;
+
 	system_clock::time_point tpx; //default ctor (epoch)
 
 	auto timer = system_clock::to_time_t(tpx);
-	cout << ctime(&timer);
+	std::cout << ctime(&timer);
 
-	cout << tpx << '\n'; //C++20
+	std::cout << tpx << '\n'; //C++20
 }
