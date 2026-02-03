@@ -8,16 +8,15 @@ long long fib(unsigned n)
 
 int main()
 {
-	using namespace std;
-	using namespace chrono;
+	using namespace std::chrono;
 
 	unsigned n;
 
-	cout << "enter an integer : ";
-	cin >> n;
+	std::cout << "enter an integer : ";
+	std::cin >> n;
 	auto start = steady_clock::now();
 	auto val = fib(n);
 	auto end = steady_clock::now();
-	cout << "fib(" << n << ") = " << val << "\n";
-	cout << "sure : " << duration<double>{end - start}.count() << " seconds\n";
+	std::cout << "fib(" << n << ") = " << val << "\n";
+	std::cout << "sure : " << duration<double>{end - start}.count() << " seconds\n";
 }
